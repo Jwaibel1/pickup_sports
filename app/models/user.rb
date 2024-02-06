@@ -14,6 +14,13 @@ class User < ApplicationRecord
     has_many :comments, dependent: :destroy
     has_one :location, as: :locationable, dependent: :destroy
 
+    #events the user has created
+    has_many :created_events, class_name: 'Event', foreign_key: 'user_id'
+
+    #events the user is participating in
+    has_many :event_participants
+    has_many :events, through: :event_participants
+
     private
     def validate_username
         unless username =~ /\A[a-zA-Z0-9_]+\Z/
