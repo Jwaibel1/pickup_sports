@@ -12,7 +12,7 @@ RSpec.describe "Posts", type: :request do
     end
     
     #returns a successful response
-    it "returns a successful response"do
+    it "returns a successful response" do
       expect(response).to be_successful
     end
 
@@ -85,7 +85,7 @@ RSpec.describe "Posts", type: :request do
       let(:post) {create(:post)}
 
       before do
-        post_attributes =attributes_for(:post, content: "updated content")
+        post_attributes = attributes_for(:post, content: "updated content")
         put "/posts/#{post.id}", params: post_attributes
       end
 
