@@ -14,9 +14,9 @@ Rails.application.routes.draw do
   # #localhost:3000/users/1
   # delete '/users/:id', to: 'users#destroy'
 
+  resources :events
+  resources :posts
   resources :users do
     get 'posts', to: 'users#posts_index'
   end
-
-  resources :posts
 end
