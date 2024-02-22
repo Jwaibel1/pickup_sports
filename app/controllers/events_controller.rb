@@ -6,7 +6,7 @@ class EventsController < ApplicationController
         events = Event.order(created_at: :desc).page(params[:page]).per(12)
         
         render json: {
-            events: EventBlueprinter.render_as_hash(events, view: :short),
+            events: EventBlueprint.render_as_hash(events, view: :short),
             total_pages: events.total_pages,
             current_page: events.current_page
         }
