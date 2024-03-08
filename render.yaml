@@ -1,23 +1,23 @@
 databases:
-  name: pickupsportsapijw
-  databaseName: pickupsportsapijw
-  user: pickupsportsapijw
-  plan: free
+      name: pickupsportsapijw
+      databaseName: pickupsportsapijw
+      user: pickupsportsapijw
+      plan: free
 
 services:
-  type: web
-  name: pickupsportsapijw
-  runtime: ruby
-  plan: free
-  buildCommand: './bin/render-build.sh'
-  # prepDeployCommand: "./bin/rails db:migrate" # prepDeployCommand only available on paid instance types
-  startCommand: './bin/rails server'
-  envVars:
-    key: DATABASE_URL
-    fromDatabase:
+      type: web
       name: pickupsportsapijw
-      property: connectionString
-    key: RAILS_MASTER_KEY
-    sync: false
-    key: WEB_CONCURRENCY
-    value: 2 # sensible default
+      runtime: ruby
+      plan: free
+      buildCommand: './bin/render-build.sh'
+      # prepDeployCommand: "./bin/rails db:migrate" # prepDeployCommand only available on paid instance types
+      startCommand: './bin/rails server'
+      envVars:
+            key: DATABASE_URL
+            fromDatabase:
+                name: pickupsportsapijw
+                property: connectionString
+            key: RAILS_MASTER_KEY
+            sync: false
+            key: WEB_CONCURRENCY
+            value: 2 # sensible default
